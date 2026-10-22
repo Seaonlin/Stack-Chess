@@ -384,7 +384,7 @@ body{color:#1e293b;background:radial-gradient(900px 430px at 50% -160px,rgba(217
   </div>
 </header>
 <div class="pills">
-  <span class="pill">当前规则：<strong id="variantText">K1（默认玩法2）</strong></span>
+  <span class="pill">当前规则：<strong id="variantText">K1（默认玩法）</strong></span>
   <span class="pill off" id="p4">附加1 关闭</span>
   <span class="pill off" id="p2">附加2 关闭</span>
   <span class="pill off" id="p3">附加3 关闭</span>
@@ -426,12 +426,12 @@ body{color:#1e293b;background:radial-gradient(900px 430px at 50% -160px,rgba(217
 </footer>
 
 <dialog class="dialog wide" id="settingsDialog">
-  <div class="dhead2"><div><h2>新游戏设置 / 规则</h2><p>默认 K1（玩法2），附加规则默认关闭。附加1与King变体、附加2、附加3互斥；附加2与附加3互斥。</p></div><button class="x" id="settingsX">×</button></div>
+  <div class="dhead2"><div><h2>新游戏设置 / 规则</h2><p>默认 K1（玩法），附加规则默认关闭。附加1与King变体、附加2、附加3互斥；附加2与附加3互斥。</p></div><button class="x" id="settingsX">×</button></div>
   <div class="dbody">
     <div class="sgrid">
       <section class="card"><h3>King 变体</h3>
         <label class="opt" data-kcard="K0"><input type="radio" name="kingVariant" value="K0"><span><b>K0 · King 无胜负意义</b><small>只是普通 4 级近战；死亡不判负，不强制放置。</small></span></label>
-        <label class="opt" data-kcard="K1"><input type="radio" name="kingVariant" value="K1"><span><b>K1 · 默认玩法2</b><small>King 可整局不放置；King 被移除时其拥有者立即判负。</small></span></label>
+        <label class="opt" data-kcard="K1"><input type="radio" name="kingVariant" value="K1"><span><b>K1 · 默认玩法</b><small>King 可整局不放置；King 被移除时其拥有者立即判负。</small></span></label>
         <label class="opt" data-kcard="K2"><input type="radio" name="kingVariant" value="K2"><span><b>K2 · 首回合强制放置</b><small>自己的第一回合必须放 King，该回合不能操作棋子；无法放置判负。</small></span></label>
         <label class="opt" data-kcard="K3"><input type="radio" name="kingVariant" value="K3"><span><b>K3 · 首回合强制放置在中营</b><small>同 K2，但 King 必须放在己方大本营中间格；可堆叠，不能超上限。</small></span></label>
         <div class="snote" id="kingNote">K2 / K3 的“第一回合”指该方自己的第一次行动。</div>
@@ -524,7 +524,7 @@ function validateSettings(raw){
 function settingsLabel(s){
  if(s.extra4)return '附加1 · 8枚 / 上限2 / 无King';
  let x=s.kingVariant||'K1';
- if(x==='K1')x+='（默认玩法2）';
+ if(x==='K1')x+='（默认玩法）';
  if(s.extra3)x+=' + 附加3';
  else if(s.extra2)x+=' + 附加2';
  return x;
